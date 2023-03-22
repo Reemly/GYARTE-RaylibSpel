@@ -13,6 +13,8 @@ Texture2D CursorImage = Raylib.LoadTexture("cursor.png");
 Texture2D CharImage = Raylib.LoadTexture("EvilSoldier1.png");
 Texture2D Char1Image = Raylib.LoadTexture("GoodElf1.png");
 Texture2D PropImage = Raylib.LoadTexture("BurningVillage.png");
+Texture2D PropImage1 = Raylib.LoadTexture("burningInside.png");
+Texture2D PropImage2 = Raylib.LoadTexture("peopleCamp.png");
 Texture2D ButtonImage = Raylib.LoadTexture("GreenButton.png");
 Texture2D ButtonImage1 = Raylib.LoadTexture("RedButton.png");
 
@@ -23,9 +25,14 @@ Texture2D ButtonImage1 = Raylib.LoadTexture("RedButton.png");
 Rectangle gameRect = new Rectangle(700, 400, 30, 30);
 Rectangle gameRect1 = new Rectangle(200, 140, 400, 500);
 Rectangle gameRect2 = new Rectangle(800, 140, 400, 500);
-Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
 Rectangle gameRect4 = new Rectangle(200, 450, 400, 120);
 Rectangle gameRect5 = new Rectangle(700, 450, 400, 120);
+Rectangle gameRect6 = new Rectangle(700, 450, 400, 120);
+
+//PropBackground
+Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
+Rectangle gameRect7 = new Rectangle(30, 370, 690, 400);
+Rectangle gameRect8 = new Rectangle(40, 300, 619, 400);
 
 // Collision Rec
 Rectangle r1 = new Rectangle(gameRect1.x, gameRect1.y, 400, 500);
@@ -222,12 +229,22 @@ while (!Raylib.WindowShouldClose())
 
 else if ( slide == "choiceEvil") {
         Raylib.ClearBackground(Color.MAROON);
+ Raylib.DrawText("Du ignorerade byborna.", 700, 100, 40, Color.DARKGREEN);
+        Raylib.DrawText("Du ignorerade byn\n och gick vidare, du kommer\n fram till en grupp personer\n som vilar.", 700, 230, 40, Color.DARKGREEN);
 
+       
+        Raylib.DrawRectangleRec(gameRect8, Color.WHITE);
+        Raylib.DrawTexture(PropImage2, (int)gameRect8.x, (int)gameRect8.y, Color.WHITE);
 }
 
 else if ( slide == "choiceGood") {
         Raylib.ClearBackground(Color.GOLD);
+ Raylib.DrawText("Du gick in i byn!", 700, 100, 40, Color.DARKGREEN);
+        Raylib.DrawText("När du kommer in i byn hör du\n en person skrika för hjälp.", 700, 230, 40, Color.DARKGREEN);
 
+       
+      Raylib.DrawRectangleRec(gameRect7, Color.WHITE);
+        Raylib.DrawTexture(PropImage1, (int)gameRect7.x, (int)gameRect7.y, Color.WHITE);
 }
 
 
