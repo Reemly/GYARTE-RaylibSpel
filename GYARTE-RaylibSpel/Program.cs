@@ -28,6 +28,8 @@ Rectangle gameRect2 = new Rectangle(800, 140, 400, 500);
 Rectangle gameRect4 = new Rectangle(200, 450, 400, 120);
 Rectangle gameRect5 = new Rectangle(700, 450, 400, 120);
 Rectangle gameRect6 = new Rectangle(700, 450, 400, 120);
+Rectangle gameRect9 = new Rectangle(765, 495, 619, 120);
+Rectangle gameRect10 = new Rectangle(765, 600, 400, 120);
 
 //PropBackground
 Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
@@ -39,6 +41,8 @@ Rectangle r1 = new Rectangle(gameRect1.x, gameRect1.y, 400, 500);
 Rectangle r2 = new Rectangle(gameRect2.x, gameRect2.y, 400, 500);
 Rectangle r4 = new Rectangle(gameRect4.x, gameRect4.y, 400, 500);
 Rectangle r5 = new Rectangle(gameRect5.x, gameRect5.y, 400, 500);
+Rectangle r6 = new Rectangle(gameRect9.x, gameRect9.y, 400, 500);
+Rectangle r7 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
 
 
 
@@ -134,10 +138,10 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
         Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
-        
+
         Raylib.DrawText("Gå in i Byn.", 265, 495, 40, Color.GOLD);
         Raylib.DrawText("Gå förbi byn.", 765, 495, 40, Color.BLACK);
-            Vector2 mousePos = Raylib.GetMousePosition();
+        Vector2 mousePos = Raylib.GetMousePosition();
 
         if (Raylib.CheckCollisionPointRec(mousePos, r4))
         {
@@ -180,7 +184,7 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawText("Du är god!", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("Du marcherar med din Armé\n och hittar en brinnande by!", 700, 230, 40, Color.DARKGREEN);
 
-       
+
         Raylib.DrawRectangleRec(gameRect3, Color.WHITE);
         Raylib.DrawTexture(PropImage, (int)gameRect3.x, (int)gameRect3.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
@@ -191,7 +195,7 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawText("Gå in i Byn.", 265, 495, 40, Color.GOLD);
         Raylib.DrawText("Gå förbi byn.", 765, 495, 40, Color.BLACK);
 
-         Vector2 mousePos = Raylib.GetMousePosition();
+        Vector2 mousePos = Raylib.GetMousePosition();
 
         if (Raylib.CheckCollisionPointRec(mousePos, r4))
         {
@@ -227,25 +231,43 @@ while (!Raylib.WindowShouldClose())
         }
     }
 
-else if ( slide == "choiceEvil") {
+    else if (slide == "choiceEvil")
+    {
         Raylib.ClearBackground(Color.MAROON);
- Raylib.DrawText("Du ignorerade byborna.", 700, 100, 40, Color.DARKGREEN);
+        Raylib.DrawText("Du ignorerade byborna.", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("Du ignorerade byn\n och gick vidare, du kommer\n fram till en grupp personer\n som vilar.", 700, 230, 40, Color.DARKGREEN);
 
-       
+
         Raylib.DrawRectangleRec(gameRect8, Color.WHITE);
         Raylib.DrawTexture(PropImage2, (int)gameRect8.x, (int)gameRect8.y, Color.WHITE);
-}
+        Raylib.DrawRectangleRec(gameRect9, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect9.x, (int)gameRect9.y, Color.WHITE);
+        Raylib.DrawRectangleRec(gameRect10, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect10.x, (int)gameRect10.y, Color.WHITE);
 
-else if ( slide == "choiceGood") {
+        Raylib.DrawText("Du låter dem vara.", 800, 495, 40, Color.GOLD);
+        Raylib.DrawText("Du går till attack.", 800, 600, 40, Color.BLACK);
+    }
+
+    else if (slide == "choiceGood")
+    {
         Raylib.ClearBackground(Color.GOLD);
- Raylib.DrawText("Du gick in i byn!", 700, 100, 40, Color.DARKGREEN);
+        Raylib.DrawText("Du gick in i byn!", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("När du kommer in i byn hör du\n en person skrika för hjälp.", 700, 230, 40, Color.DARKGREEN);
 
-       
-      Raylib.DrawRectangleRec(gameRect7, Color.WHITE);
+
+        Raylib.DrawRectangleRec(gameRect7, Color.WHITE);
         Raylib.DrawTexture(PropImage1, (int)gameRect7.x, (int)gameRect7.y, Color.WHITE);
-}
+
+        Raylib.DrawRectangleRec(gameRect9, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect9.x, (int)gameRect9.y, Color.WHITE);
+
+        Raylib.DrawRectangleRec(gameRect10, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect10.x, (int)gameRect10.y, Color.WHITE);
+
+        Raylib.DrawText("Du låter dem vara.", 800, 495, 40, Color.GOLD);
+        Raylib.DrawText("Du går till attack.", 800, 600, 40, Color.BLACK);
+    }
 
 
 
@@ -258,7 +280,7 @@ else if ( slide == "choiceGood") {
 }
 
 
-
+// button på choiceEvil/Good är lite knasig
 
 
 
