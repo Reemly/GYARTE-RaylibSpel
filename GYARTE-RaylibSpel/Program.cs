@@ -28,8 +28,8 @@ Rectangle gameRect2 = new Rectangle(800, 140, 400, 500);
 Rectangle gameRect4 = new Rectangle(200, 450, 400, 120);
 Rectangle gameRect5 = new Rectangle(700, 450, 400, 120);
 Rectangle gameRect6 = new Rectangle(700, 450, 400, 120);
-Rectangle gameRect9 = new Rectangle(765, 495, 619, 120);
-Rectangle gameRect10 = new Rectangle(765, 600, 400, 120);
+Rectangle gameRect9 = new Rectangle(765, 495, 400, 120);
+Rectangle gameRect10 = new Rectangle(765, 650, 400, 120);
 
 //PropBackground
 Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
@@ -41,8 +41,8 @@ Rectangle r1 = new Rectangle(gameRect1.x, gameRect1.y, 400, 500);
 Rectangle r2 = new Rectangle(gameRect2.x, gameRect2.y, 400, 500);
 Rectangle r4 = new Rectangle(gameRect4.x, gameRect4.y, 400, 500);
 Rectangle r5 = new Rectangle(gameRect5.x, gameRect5.y, 400, 500);
-Rectangle r6 = new Rectangle(gameRect9.x, gameRect9.y, 400, 500);
-Rectangle r7 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
+Rectangle r9 = new Rectangle(gameRect9.x, gameRect9.y, 400, 500);
+Rectangle r10 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
 
 
 
@@ -59,7 +59,7 @@ while (!Raylib.WindowShouldClose())
 
     if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
     {
-        gameRect.x -= 5;
+        gameRect.x -= 50;
     }
 
     if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
@@ -245,8 +245,43 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawRectangleRec(gameRect10, Color.WHITE);
         Raylib.DrawTexture(ButtonImage1, (int)gameRect10.x, (int)gameRect10.y, Color.WHITE);
 
-        Raylib.DrawText("Du låter dem vara.", 800, 495, 40, Color.GOLD);
-        Raylib.DrawText("Du går till attack.", 800, 600, 40, Color.BLACK);
+        Raylib.DrawText("Du låter dem vara.", 780, 535, 40, Color.GOLD);
+        Raylib.DrawText("Du går till attack.", 790, 690, 40, Color.BLACK); 
+        Vector2 mousePos = Raylib.GetMousePosition();
+
+        if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
+        {
+            if (Raylib.IsMouseButtonPressed(0))
+            {
+                slide = "choiceGood2";
+            }
+        }
+        if (Raylib.CheckCollisionPointRec(mousePos, r10))
+        {
+            if (Raylib.IsMouseButtonPressed(0))
+            {
+                slide = "choiceEvil2";
+            }
+        }
+        if (Raylib.CheckCollisionRecs(r9, gameRect))
+        {
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+            {
+                slide = "choiceGood2";
+                gameRect.x = 700;
+                gameRect.y = 400;
+            }
+        }
+        if (Raylib.CheckCollisionRecs(r10, gameRect))
+        {
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+            {
+                slide = "choiceEvil2";
+                gameRect.x = 700;
+                gameRect.y = 400;
+            }
+        }
+
     }
 
     else if (slide == "choiceGood")
@@ -265,8 +300,52 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawRectangleRec(gameRect10, Color.WHITE);
         Raylib.DrawTexture(ButtonImage1, (int)gameRect10.x, (int)gameRect10.y, Color.WHITE);
 
-        Raylib.DrawText("Du låter dem vara.", 800, 495, 40, Color.GOLD);
-        Raylib.DrawText("Du går till attack.", 800, 600, 40, Color.BLACK);
+        Raylib.DrawText("Du hjälper dem.", 780, 535, 40, Color.GOLD);
+        Raylib.DrawText("Du låter dem brinna.", 790, 690, 40, Color.BLACK);
+         Vector2 mousePos = Raylib.GetMousePosition();
+
+        if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
+        {
+            if (Raylib.IsMouseButtonPressed(0))
+            {
+                slide = "choiceGood2";
+            }
+        }
+        if (Raylib.CheckCollisionPointRec(mousePos, r10))
+        {
+            if (Raylib.IsMouseButtonPressed(0))
+            {
+                slide = "choiceEvil2";
+            }
+        }
+        if (Raylib.CheckCollisionRecs(r9, gameRect))
+        {
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+            {
+                slide = "choiceGood2";
+                gameRect.x = 700;
+                gameRect.y = 400;
+            }
+        }
+        if (Raylib.CheckCollisionRecs(r10, gameRect))
+        {
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
+            {
+                slide = "choiceEvil2";
+                gameRect.x = 700;
+                gameRect.y = 400;
+            }
+        }
+    }
+
+    else if (slide == "choiceEvil2") {
+        Raylib.ClearBackground(Color.RED);
+
+    }
+
+    else if (slide == "choiceGood2") {
+        Raylib.ClearBackground(Color.YELLOW);
+
     }
 
 
@@ -279,8 +358,8 @@ while (!Raylib.WindowShouldClose())
     Raylib.EndDrawing();
 }
 
-
-// button på choiceEvil/Good är lite knasig
+//Ska jobba med choiceGood/Evil 2 slides, försök att göra tre olika val innan du tackar dem för 
+//att ha spelat.
 
 
 
