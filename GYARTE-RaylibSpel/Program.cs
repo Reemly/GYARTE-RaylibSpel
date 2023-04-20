@@ -27,13 +27,18 @@ Texture2D ButtonImage1 = Raylib.LoadTexture("RedButton.png");
 Rectangle gameRect = new Rectangle(700, 400, 30, 30);
 Rectangle gameRect1 = new Rectangle(200, 140, 400, 500);
 Rectangle gameRect2 = new Rectangle(800, 140, 400, 500);
-Rectangle gameRect4 = new Rectangle(200, 450, 400, 120);
-Rectangle gameRect5 = new Rectangle(700, 450, 400, 120);
 Rectangle gameRect6 = new Rectangle(700, 450, 400, 120);
-Rectangle gameRect9 = new Rectangle(765, 495, 400, 120);
-Rectangle gameRect10 = new Rectangle(765, 650, 400, 120);
 Rectangle gameRect11 = new Rectangle(765, 650, 345, 255);
 Rectangle gameRect12 = new Rectangle(200, 150, 275, 180);
+
+//buttons
+Rectangle gameRect4 = new Rectangle(200, 450, 400, 120);
+Rectangle gameRect5 = new Rectangle(700, 450, 400, 120);
+Rectangle gameRect9 = new Rectangle(765, 495, 400, 120);
+Rectangle gameRect10 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect13 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect14 = new Rectangle(765, 650, 400, 120);
+
 
 //PropBackground
 Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
@@ -346,15 +351,15 @@ while (!Raylib.WindowShouldClose())
 
     else if (slide == "choiceEvil2")
     {
-        Raylib.ClearBackground(Color.RED);
+        Raylib.ClearBackground(Color.MAROON);
         Raylib.DrawText("Du lät dem brinna?", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("Du är hämsk.", 700, 230, 40, Color.DARKGREEN);
         Raylib.DrawRectangleRec(gameRect3, Color.WHITE);
         Raylib.DrawTexture(PropImage, (int)gameRect3.x, (int)gameRect3.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
     }
 
     else if (slide == "choiceGood2")
@@ -362,19 +367,25 @@ while (!Raylib.WindowShouldClose())
         Raylib.ClearBackground(Color.YELLOW);
         Raylib.DrawText("Du går och räddar personen!", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("'tack för att du har räddat mig :p'", 700, 230, 35, Color.DARKGREEN);
+                Raylib.DrawRectangleRec(gameRect3, Color.WHITE);
+        Raylib.DrawTexture(PropImage, (int)gameRect3.x, (int)gameRect3.y, Color.WHITE);
+        Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
+        Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
     }
     
     else if (slide == "choiceEvil2SEP"){
 
-        Raylib.ClearBackground(Color.RED);
+        Raylib.ClearBackground(Color.MAROON);
         Raylib.DrawText("Du och din armé dödar dem.", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("Du är hämsk.", 700, 230, 40, Color.DARKGREEN);
          Raylib.DrawRectangleRec(gameRect11, Color.WHITE);
         Raylib.DrawTexture(PropImage4, (int)gameRect12.x, (int)gameRect12.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
 Vector2 mousePos = Raylib.GetMousePosition();
 
         if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
@@ -414,14 +425,14 @@ Vector2 mousePos = Raylib.GetMousePosition();
     }
     else if (slide == "choiceGood2SEP"){
         Raylib.ClearBackground(Color.YELLOW);
-        Raylib.DrawText("Du går vidare utan att störa dem.", 700, 100, 40, Color.DARKGREEN);
+        Raylib.DrawText("Du går vidare.", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("... Du stöter på en hund valp. ", 700, 230, 40, Color.DARKGREEN);
          Raylib.DrawRectangleRec(gameRect12, Color.WHITE);
         Raylib.DrawTexture(PropImage3, (int)gameRect12.x, (int)gameRect12.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
  Vector2 mousePos = Raylib.GetMousePosition();
 
         if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
@@ -471,6 +482,8 @@ Vector2 mousePos = Raylib.GetMousePosition();
 //Ska jobba med choiceGood/Evil 2 slides, försök att göra tre olika val innan du tackar dem för 
 //att ha spelat.
 
+//i village route evil, om du låter dem brinna ska du få valen att lämna byn eller fortsätta leta
+//i village route good, om du räddar bybon ska du få samma val som evil route
 
-
-
+//i forest route evil, efter valpen så kan spelaren få valen att gå vidare eller döda mer djur
+//i forest route good, efter du lät dem va
