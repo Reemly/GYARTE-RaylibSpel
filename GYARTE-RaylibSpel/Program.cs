@@ -28,7 +28,6 @@ Rectangle gameRect = new Rectangle(700, 400, 30, 30);
 Rectangle gameRect1 = new Rectangle(200, 140, 400, 500);
 Rectangle gameRect2 = new Rectangle(800, 140, 400, 500);
 Rectangle gameRect6 = new Rectangle(700, 450, 400, 120);
-Rectangle gameRect11 = new Rectangle(765, 650, 345, 255);
 Rectangle gameRect12 = new Rectangle(200, 150, 275, 180);
 
 //buttons
@@ -38,12 +37,17 @@ Rectangle gameRect9 = new Rectangle(765, 495, 400, 120);
 Rectangle gameRect10 = new Rectangle(765, 650, 400, 120);
 Rectangle gameRect13 = new Rectangle(765, 650, 400, 120);
 Rectangle gameRect14 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect15 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect16 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect17 = new Rectangle(765, 650, 400, 120);
+Rectangle gameRect18 = new Rectangle(765, 650, 400, 120);
 
 
 //PropBackground
 Rectangle gameRect3 = new Rectangle(150, 100, 500, 320);
 Rectangle gameRect7 = new Rectangle(30, 370, 690, 400);
 Rectangle gameRect8 = new Rectangle(40, 300, 619, 400);
+Rectangle gameRect11 = new Rectangle(150, 100, 340, 150);
 
 // Collision Rec
 Rectangle r1 = new Rectangle(gameRect1.x, gameRect1.y, 400, 500);
@@ -52,8 +56,15 @@ Rectangle r4 = new Rectangle(gameRect4.x, gameRect4.y, 400, 500);
 Rectangle r5 = new Rectangle(gameRect5.x, gameRect5.y, 400, 500);
 Rectangle r9 = new Rectangle(gameRect9.x, gameRect9.y, 400, 500);
 Rectangle r10 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
-Rectangle r11 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
-Rectangle r12 = new Rectangle(gameRect10.x, gameRect10.y, 400, 500);
+Rectangle r11 = new Rectangle(gameRect11.x, gameRect11.y, 400, 500);
+Rectangle r12 = new Rectangle(gameRect12.x, gameRect12.y, 400, 500);
+Rectangle r13 = new Rectangle(gameRect13.x, gameRect13.y, 400, 500);
+Rectangle r14 = new Rectangle(gameRect14.x, gameRect14.y, 400, 500);
+Rectangle r15 = new Rectangle(gameRect15.x, gameRect15.y, 400, 500);
+Rectangle r16 = new Rectangle(gameRect16.x, gameRect16.y, 400, 500);
+Rectangle r17 = new Rectangle(gameRect17.x, gameRect17.y, 400, 500);
+Rectangle r18 = new Rectangle(gameRect18.x, gameRect18.y, 400, 500);
+
 
 
 
@@ -357,9 +368,11 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawRectangleRec(gameRect3, Color.WHITE);
         Raylib.DrawTexture(PropImage, (int)gameRect3.x, (int)gameRect3.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+             Raylib.DrawText("Du försöker hitta någon\n mer att rädda.", 265, 495, 20, Color.GOLD);
+        Raylib.DrawText("Du lämnar alla för att dö.", 710, 495, 30, Color.BLACK);
     }
 
     else if (slide == "choiceGood2")
@@ -370,10 +383,13 @@ while (!Raylib.WindowShouldClose())
                 Raylib.DrawRectangleRec(gameRect3, Color.WHITE);
         Raylib.DrawTexture(PropImage, (int)gameRect3.x, (int)gameRect3.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+             Raylib.DrawText("Du hjälper dem ut ur staden.", 220, 495, 25, Color.GOLD);
+        Raylib.DrawText("Du kastar in dem i elden.", 745, 495, 25, Color.BLACK);
     }
+
     
     else if (slide == "choiceEvil2SEP"){
 
@@ -381,46 +397,48 @@ while (!Raylib.WindowShouldClose())
         Raylib.DrawText("Du och din armé dödar dem.", 700, 100, 40, Color.DARKGREEN);
         Raylib.DrawText("Du är hämsk.", 700, 230, 40, Color.DARKGREEN);
          Raylib.DrawRectangleRec(gameRect11, Color.WHITE);
-        Raylib.DrawTexture(PropImage4, (int)gameRect12.x, (int)gameRect12.y, Color.WHITE);
+        Raylib.DrawTexture(PropImage4, (int)gameRect11.x, (int)gameRect11.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect5.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+        Raylib.DrawText("Du begraver dem.", 235, 495, 40, Color.GOLD);
+        Raylib.DrawText("Ni marscherar\n över kropparna.", 745, 495, 30, Color.BLACK);
+       
 Vector2 mousePos = Raylib.GetMousePosition();
 
-        if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
+        if (Raylib.CheckCollisionPointRec(mousePos, gameRect4))
         {
             if (Raylib.IsMouseButtonPressed(0))
             {
-                slide = "choiceGood2";
+                slide = "choiceGood3";
             }
         }
-        if (Raylib.CheckCollisionPointRec(mousePos, r10))
+        if (Raylib.CheckCollisionPointRec(mousePos, r5))
         {
             if (Raylib.IsMouseButtonPressed(0))
             {
-                slide = "choiceEvil2";
+                slide = "choiceEvil3";
             }
         }
-        if (Raylib.CheckCollisionRecs(r9, gameRect))
+        if (Raylib.CheckCollisionRecs(r4, gameRect))
         {
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
             {
-                slide = "choiceGood2";
+                slide = "choiceGood3";
                 gameRect.x = 700;
                 gameRect.y = 400;
             }
         }
-        if (Raylib.CheckCollisionRecs(r10, gameRect))
+        if (Raylib.CheckCollisionRecs(r5, gameRect))
         {
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
             {
-                slide = "choiceEvil2";
+                slide = "choiceEvil3";
                 gameRect.x = 700;
                 gameRect.y = 400;
             }
         }
-                //nu måste du ändra alla buttonimage grejen och keypressed , och lägga till interaction, copy + paste
 
     }
     else if (slide == "choiceGood2SEP"){
@@ -430,44 +448,56 @@ Vector2 mousePos = Raylib.GetMousePosition();
          Raylib.DrawRectangleRec(gameRect12, Color.WHITE);
         Raylib.DrawTexture(PropImage3, (int)gameRect12.x, (int)gameRect12.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect4, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage, (int)gameRect13.x, (int)gameRect13.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage, (int)gameRect4.x, (int)gameRect4.y, Color.WHITE);
         Raylib.DrawRectangleRec(gameRect5, Color.WHITE);
-        Raylib.DrawTexture(ButtonImage1, (int)gameRect14.x, (int)gameRect14.y, Color.WHITE);
+        Raylib.DrawTexture(ButtonImage1, (int)gameRect5.x, (int)gameRect5.y, Color.WHITE);
+        Raylib.DrawText("Du klappar den.", 265, 495, 40, Color.GOLD);
+        Raylib.DrawText("Du sparkar hunden.", 715, 495, 35, Color.BLACK);
+      
  Vector2 mousePos = Raylib.GetMousePosition();
 
-        if (Raylib.CheckCollisionPointRec(mousePos, gameRect9))
+        if (Raylib.CheckCollisionPointRec(mousePos, gameRect4))
         {
             if (Raylib.IsMouseButtonPressed(0))
             {
-                slide = "choiceGood2";
+                slide = "choiceGood3";
             }
         }
-        if (Raylib.CheckCollisionPointRec(mousePos, r10))
+        if (Raylib.CheckCollisionPointRec(mousePos, gameRect5))
         {
             if (Raylib.IsMouseButtonPressed(0))
             {
-                slide = "choiceEvil2";
+                slide = "choiceEvil3";
             }
         }
-        if (Raylib.CheckCollisionRecs(r9, gameRect))
+        if (Raylib.CheckCollisionRecs(r4, gameRect))
         {
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
             {
-                slide = "choiceGood2";
+                slide = "choiceGood3";
                 gameRect.x = 700;
                 gameRect.y = 400;
             }
         }
-        if (Raylib.CheckCollisionRecs(r10, gameRect))
+        if (Raylib.CheckCollisionRecs(r5, gameRect))
         {
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_E))
             {
-                slide = "choiceEvil2";
+                slide = "choiceEvil3";
                 gameRect.x = 700;
                 gameRect.y = 400;
             }
         }
-        //nu måste du ändra alla buttonimage grejen och keypressed , och lägga till interaction, copy + paste
+        else if (slide == "choiceEvil3")
+        {
+ Raylib.ClearBackground(Color.WHITE);
+        Raylib.DrawText("Thank you for your time.", 700, 100, 40, Color.DARKGREEN);
+        }
+       else if (slide == "choiceGood3")
+        {
+ Raylib.ClearBackground(Color.WHITE);
+        Raylib.DrawText("Thank you for your time.", 700, 100, 40, Color.DARKGREEN);
+        }
     }
 
 
@@ -479,11 +509,3 @@ Vector2 mousePos = Raylib.GetMousePosition();
     Raylib.EndDrawing();
 }
 
-//Ska jobba med choiceGood/Evil 2 slides, försök att göra tre olika val innan du tackar dem för 
-//att ha spelat.
-
-//i village route evil, om du låter dem brinna ska du få valen att lämna byn eller fortsätta leta
-//i village route good, om du räddar bybon ska du få samma val som evil route
-
-//i forest route evil, efter valpen så kan spelaren få valen att gå vidare eller döda mer djur
-//i forest route good, efter du lät dem va
